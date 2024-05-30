@@ -101,6 +101,6 @@ body{
     height: 250px;
     
     opacity: 1;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0);
     transition: 0.5s all ease-in-out;
 }
