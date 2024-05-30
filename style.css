@@ -1,0 +1,106 @@
+body{
+    overflow: hidden;
+}
+.buttons{
+    position: absolute;
+    bottom: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.in_db{
+    width: 500px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button{
+    width: 250px;
+    height: 80px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 40px;
+    font-style: bold;
+    font-family: Impact;
+}
+
+
+.imgs{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 40%;
+}
+
+
+.testing{
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    bottom: 40%;
+}
+
+.llll_el, .rrrr_el{
+    display: block;
+    margin: 5px;
+    width: 50px;
+    height: 25px;
+    opacity: 0.1;
+    background-color: rgba(0, 0, 0, 0.1);
+    transition: 0.5s all ease-in-out;
+}
+
+.lll_el, .rrr_el{
+    display: block;
+    margin: 5px;
+    width: 100px;
+    height: 50px;
+    opacity: 0.25;
+    background-color: rgba(0, 0, 0, 0.25);
+    transition: 0.5s all ease-in-out;
+}
+
+.ll_el, .rr_el{
+    display: block;
+    margin: 5px;
+    width: 200px;
+    height: 100px;
+    opacity: 0.5;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s all ease-in-out;
+}
+
+.l_el, .r_el{
+    display: block;
+    margin: 5px;
+    width: 300px;
+    height: 150px;
+
+    opacity: 0.75;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: 0.5s all ease-in-out;
+}
+
+.c_el{
+    display: block;
+    margin: 5px;
+    width: 500px;
+    height: 250px;
+    
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+    transition: 0.5s all ease-in-out;
+}
