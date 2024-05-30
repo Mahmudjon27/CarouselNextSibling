@@ -11,13 +11,14 @@ ind_r = 0
 let images = parent.querySelectorAll('*');
 
 
-
+clk_sound = new Audio("sounds/clk.mp3")
 
 cur_next = ''
 cur_prev = ''
+
 function next() {
 
-    console.log(index_img)
+    clk_sound.play()
     
     if(index_img<24){
         images.forEach(function(e) {
@@ -25,33 +26,15 @@ function next() {
         });
         cur_img = cur_img.nextElementSibling
 
-        index_img = parseInt(cur_img.alt)
-
-        // console.log(index_img)
-    
-        cur_img.style.display = 'block';
-    
-        images.forEach(function(e) {
-            e.className=""
-        });
-        
-        cur_img.classList.add('c_el');
-    
-    
         giveStyle()
     }
     
-
-
-    
-
-
-    
-
 }
 
 
 function prev() {
+
+    clk_sound.play()
 
     console.log(index_img)
 
@@ -60,31 +43,25 @@ function prev() {
             e.style.display = 'none';
         });
         cur_img = cur_img.previousElementSibling
-
-        index_img = parseInt(cur_img.alt)
-    
-        cur_img.style.display = 'block';
-    
-        images.forEach(function(e) {
-            e.className=""
-        });
-        
-    
-        cur_img.classList.add('c_el');
-    
     
         giveStyle()
     }
-
-    
-
-
-    
 
 }
 
 
 function giveStyle() {
+
+    index_img = parseInt(cur_img.alt)
+    
+    cur_img.style.display = 'block';
+
+    images.forEach(function(e) {
+        e.className=""
+    });
+    
+
+    cur_img.classList.add('c_el');
 
     cur_r = cur_img.nextElementSibling
 
