@@ -3,12 +3,15 @@ body{
 }
 .buttons{
     position: absolute;
-    bottom: 10%;
+    bottom: 5%;
+    right: 0%;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     width: 100%;
-    
+    margin: 5px;
+    transition: 0.2s ease-in-out all;
 }
 
 .in_db{
@@ -19,14 +22,14 @@ body{
     align-items: center;
 }
 
-.buttons button{
+.in_db button{
     width: 250px;
-    height: 80px;
+    height: 40px;
     border: none;
     border-radius: 20px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    font-size: 40px;
+    font-size: 20px;
     font-style: bold;
     font-family: Impact;
     margin: 5px;
@@ -34,18 +37,18 @@ body{
 
 
 .imgs{
-    display: block;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     position: absolute;
-    bottom: 40%;
+    top: 20%;
+    z-index: -1;
+    transition: 0.2s ease-in-out all;
 }
 
 
 .testing{
-    display: block;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,4 +107,42 @@ body{
     opacity: 1;
     background-color: rgba(0, 0, 0);
     transition: 0.5s all ease-in-out;
+}
+
+
+.modmenu{
+    display: flex;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+#indicator_btn{
+    padding: 0px 100px 0px 100px;
+}
+#indicator_btn button{
+    width: 30px;
+    height: 30px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 100%;
+    margin: 1px;
+    transition: 0.4s ease-in-out all;
+    color: black;
+    font-family: 'Segoe UI';
+}
+
+#inputs_len{
+    padding: 20px;
+    font-family: 'Segoe UI';
+}
+
+#inputs_len input{
+    width: 20%;
+}
+
+#setDirect{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    z-index: 1;
 }

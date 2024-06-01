@@ -9,40 +9,55 @@
 <body>
     <p style="font-family: 'Segoe UI'">Made by: Abdullaev Mahmudjon</p>
 
+    <select onchange="changeDirect()" name="" id="setDirect">
+        <option value="d_hor">horitzontal</option>
+        <option value="d_ver">vertical</option>
+    </select>
+
     <div class="buttons">
 
         <div class="in_db">
             <button onclick="prev()" id="left_btn">←</button>
             <button onclick="next()" id="right_btn">→</button>
         </div>
+
+        <div id="indicator_btn">
+        </div>
+
+        <div id="inputs_len">
+            <label for="">How many imgs in carousel:</label>
+            <input onchange="change_imgs_count()" type="text" name="" id="" value="">
+        </div>
         
     </div>
     
     <div class="imgs">
-        <img class="c_el" src="https://picsum.photos/1000/500" alt="1">
-        <img class="r_el" src="https://picsum.photos/1001/500" alt="2">
-        <img class="rr_el" src="https://picsum.photos/1002/500" alt="3">
-        <img class="rrr_el" class="imga" src="https://picsum.photos/1003/500" alt="4">
-        <img class="rrrr_el" class="imga" src="https://picsum.photos/1004/500" alt="5">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1005/500" alt="6">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1006/500" alt="7">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1007/500" alt="8">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1008/500" alt="9">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1010/500" alt="10">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1011/500" alt="11">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1012/500" alt="12">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1013/500" alt="13">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1014/500" alt="14">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1015/500" alt="15">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1016/500" alt="16">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1017/500" alt="17">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1018/500" alt="18">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1019/500" alt="19">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1020/500" alt="20">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1021/500" alt="21">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1022/500" alt="22">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1023/500" alt="23">
-        <img style="display: none;" class="imga" src="https://picsum.photos/1024/500" alt="24">
+        <img class="c_el" src="https://picsum.photos/1000/500" alt="0">
+        <img class="r_el" src="https://picsum.photos/1001/500" alt="1">
+        <img class="rr_el" src="https://picsum.photos/1002/500" alt="2">
+        <img class="rrr_el" class="imga" src="https://picsum.photos/1003/500" alt="3">
+        <img class="rrrr_el" class="imga" src="https://picsum.photos/1004/500" alt="4">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1005/500" alt="5">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1006/500" alt="6">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1007/500" alt="7">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1008/500" alt="8">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1010/500" alt="9">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1011/500" alt="10">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1012/500" alt="11">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1013/500" alt="12">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1014/500" alt="13">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1015/500" alt="14">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1016/500" alt="15">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1017/500" alt="16">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1018/500" alt="17">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1019/500" alt="18">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1020/500" alt="19">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1021/500" alt="20">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1022/500" alt="21">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1023/500" alt="22">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1025/500" alt="23">
+        <img style="display: none;" class="imga" src="https://picsum.photos/1026/500" alt="24">
+        
     </div>
 
     <!-- <div class="testing">
