@@ -17,6 +17,9 @@ right_btn = document.getElementById('right_btn')
 in_db = document.querySelector('.in_db')
 
 
+src_of_images = []
+
+
 
 for(i=0; i<images.length; i++){
     newBtn = document.createElement('button')
@@ -32,6 +35,10 @@ let allbuttons = ind_bnt.querySelectorAll('*');
 allbuttons[index_img].style.backgroundColor = 'gray'
 
 
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 
 
@@ -50,13 +57,8 @@ function next() {
     }
 
     else{
-        images.forEach(function(e) {
-            e.style.display = 'none';
-        });
-
         cur_img = images[0]
-
-        giveStyle()
+        giveMoreAnim()
     }
     
 }
@@ -75,15 +77,26 @@ function prev() {
         giveStyle()
     }
     else{
-        images.forEach(function(e) {
-            e.style.display = 'none';
-        });
-
         cur_img = images[images.length-1]
-
-        giveStyle()
+        giveMoreAnim()
     }
 
+}
+
+async function giveMoreAnim(){
+    op_counter = 0
+    op_of_images = []
+    images.forEach(function(e) {
+        op_of_images.push(e.style.opacity)
+        e.style.opacity = 0
+    });
+    await sleep(500)
+    images.forEach(function(e) {
+        e.style.opacity = op_of_images[op_counter]
+        op_counter++
+    });
+
+    giveStyle()
 }
 
 
@@ -157,12 +170,33 @@ function giveStyle() {
 }
 
 
-ind_bnt.onclick = function() {
-
+ind_bnt.onclick = async function() {
+    ebal_v_rot_animation = index_img
     ind_index = parseInt(event.target.id.slice(6, event.target.id.length))
+    
     console.log(ind_index)
 
     if(isNaN(ind_index)!==true){
+        op_counter = 0
+        op_of_images = []
+        if(Math.abs(ebal_v_rot_animation-ind_index)>4){
+            images.forEach(function(e) {
+                op_of_images.push(e.style.opacity)
+                // e.src = 'sounds/kostil.jpg'
+                e.style.opacity = 0
+            });
+            await sleep(500)
+            images.forEach(function(e) {
+                // e.src = src_of_images[src_counter]
+                
+                e.style.opacity = op_of_images[op_counter]
+                op_counter++
+            });
+
+            console.log('jhahahahajhas')
+
+        }
+
         cur_img = images[ind_index]
         giveStyle() 
     }
