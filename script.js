@@ -19,6 +19,8 @@ in_db = document.querySelector('.in_db')
 
 src_of_images = []
 
+is_anim_going=false
+
 
 
 for(i=0; i<images.length; i++){
@@ -46,44 +48,46 @@ cur_next = ''
 cur_prev = ''
 
 function next() {
-    
-    if(index_img<images.length-1){
-        images.forEach(function(e) {
-            e.style.display = 'none';
-        });
-        cur_img = cur_img.nextElementSibling
+    if(is_anim_going==false){
+        if(index_img<images.length-1){
+            images.forEach(function(e) {
+                e.style.display = 'none';
+            });
+            cur_img = cur_img.nextElementSibling
 
-        giveStyle()
-    }
+            giveStyle()
+        }
 
-    else{
-        cur_img = images[0]
-        giveMoreAnim()
+        else{
+            cur_img = images[0]
+            giveMoreAnim()
+        }
     }
+        
     
 }
 
 
 function prev() {
+    if(is_anim_going==false){
+        if(index_img>0){
+            images.forEach(function(e) {
+                e.style.display = 'none';
+            });
+            cur_img = cur_img.previousElementSibling
+        
+            giveStyle()
+        }
+        else{
+            cur_img = images[images.length-1]
+            giveMoreAnim()
 
-    console.log(index_img)
-
-    if(index_img>0){
-        images.forEach(function(e) {
-            e.style.display = 'none';
-        });
-        cur_img = cur_img.previousElementSibling
-    
-        giveStyle()
+        }
     }
-    else{
-        cur_img = images[images.length-1]
-        giveMoreAnim()
-    }
-
 }
 
 async function giveMoreAnim(){
+    is_anim_going = true
     op_counter = 0
     op_of_images = []
     images.forEach(function(e) {
@@ -97,6 +101,8 @@ async function giveMoreAnim(){
     });
 
     giveStyle()
+
+    is_anim_going = false
 }
 
 
